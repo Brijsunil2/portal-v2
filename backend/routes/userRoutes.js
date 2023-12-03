@@ -4,10 +4,12 @@ import {
   authUser,
   registerUser,
   logoutUser,
-} from "../controllers/userControllers";
+  getUser,
+} from "../controllers/userControllers.js";
 
 router.post("/", registerUser);
 router.post("/auth", authUser);
 router.post("/logout", logoutUser);
+router.get("/user", getUser);
 
 export default router;
