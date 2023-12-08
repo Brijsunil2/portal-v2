@@ -1,7 +1,26 @@
-.authsection-container { 
+.authsection-container {
+  display: flex;
+  flex-direction: column;
   width: 100%;
   height: 100%;
 }
+
 .authsection-container label {
   width: 5rem;
+}
+
+.authsection-container .btn-group {
+  align-self: center;
+}
+
+.authsection-container form {
+  padding: 0 2em;
+}
+
+.auth-h2 {
+  color: black;
+  font-size: 1.5rem;
+  padding: 10px;
+  margin: 10px;
+  text-align: center;
 }

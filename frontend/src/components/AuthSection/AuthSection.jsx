@@ -33,6 +33,7 @@ const AuthSection = ({ setUser }) => {
           Sign-up
         </ToggleButton>
       </ButtonGroup>
+      <Container>{isLogin ? <AuthLogin /> : <AuthSignup />}</Container>
     </Container>
   );
 };
