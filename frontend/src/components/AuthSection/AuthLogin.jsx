@@ -1,45 +1,51 @@
 import { useState } from "react";
-import { Container, Button, Col, Form, InputGroup, Row } from "react-bootstrap";
+import { Container, Button, Col, Form, Row } from "react-bootstrap";
 
 const AuthLogin = () => {
   const [validated, setValidated] = useState(false);
 
-  const handleSubmit = (event) => {
-    const form = event.currentTarget;
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    const form = e.currentTarget;
+
     if (form.checkValidity() === false) {
-      event.preventDefault();
-      event.stopPropagation();
+      e.stopPropagation();
     }
 
     setValidated(true);
+    console.log(e.target.loginEmailInput.value);
+    console.log(e.target.loginPassInput.value);
   };
 
   return (
     <Container className="authlogin-container">
-      <h2 className="auth-h2">Login to get Started</h2>
+      <h2 className="auth-h2">Login to Portal!</h2>
 
       <Form noValidate validated={validated} onSubmit={handleSubmit}>
         <Row className="mb-3">
-          <Form.Group as={Col} controlId="validationCustom01">
-            <Form.Label>Email</Form.Label>
+          <Form.Group as={Col}>
             <Form.Control
-              required
+              id="loginEmailInput"
               type="email"
               placeholder="Email"
+              required
             />
             <Form.Control.Feedback type="invalid">
-            Please provide a valid email.
-          </Form.Control.Feedback>
+              Please provide a valid email.
+            </Form.Control.Feedback>
           </Form.Group>
         </Row>
         <Row className="mb-3">
           <Form.Group as={Col}>
-            <Form.Label>Password</Form.Label>
             <Form.Control
-              required
+              id="loginPassInput"
               type="password"
               placeholder="Password"
+              required
             />
+            <Form.Control.Feedback type="invalid">
+              Please provide a password.
+            </Form.Control.Feedback>
           </Form.Group>
         </Row>
         <Button type="submit">Login</Button>
