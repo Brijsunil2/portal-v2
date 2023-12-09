@@ -14,7 +14,11 @@
 }
 
 .authsection-container form {
-  padding: 0 2em;
+  padding: 0 0.5rem;
+}
+
+.authsection-container button {
+  float: right;
 }
 
 .auth-h2 {

@@ -6,7 +6,7 @@ function App() {
   return (
     <>
       <Header />
-      <Container className="my-2">
+      <Container className="my-1 my-md-2">
         <Outlet />
       </Container>
     </>

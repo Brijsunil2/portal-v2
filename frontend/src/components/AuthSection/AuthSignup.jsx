@@ -21,7 +21,7 @@ const AuthSignup = () => {
   };
 
   return (
-    <Container className="authlogin-container">
+    <Container className="authsignup-container">
       <h2 className="auth-h2">Sign-up to get Started!</h2>
 
       <Form noValidate validated={validated} onSubmit={handleSubmit}>
