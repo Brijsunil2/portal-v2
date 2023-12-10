@@ -70,7 +70,7 @@ const WeatherSection = () => {
           </Row>
         </Container>
       ) : (
-        <Container>
+        <Container className="weather-container">
           <Spinner animation="border" role="status">
             <span className="visually-hidden">Loading...</span>
           </Spinner>

@@ -5,8 +5,7 @@ import User from "../models/userModel.js";
 const sendUserData = (res, user) => {
   res.status(201).json({
     _id: user.id,
-    firstname: user.firstname,
-    lastname: user.lastname,
+    name: user.name,
     username: user.username,
     email: user.email,
   });
@@ -26,7 +25,7 @@ const authUser = asyncHandler(async (req, res) => {
 });
 
 const registerUser = asyncHandler(async (req, res) => {
-  const { firstname, lastname, username, email, password } = req.body;
+  const { name , username, email, password } = req.body;
   const userExists = await User.findOne({ email });
 
   if (userExists) {
@@ -43,8 +42,7 @@ const registerUser = asyncHandler(async (req, res) => {
   }
 
   const user = await User.create({
-    firstname,
-    lastname,
+    name,
     username,
     email,
     password,
@@ -71,8 +69,7 @@ const logoutUser = asyncHandler(async (req, res) => {
 const getUser = asyncHandler(async (req, res) => {
   const user = {
     _id: req.user.id,
-    firstname: req.user.firstname,
-    lastname: req.user.lastname,
+    name: req.user.name,
     username: req.user.username,
     email: req.user.email,
   };
