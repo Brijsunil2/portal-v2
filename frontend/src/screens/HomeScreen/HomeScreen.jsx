@@ -1,3 +1,4 @@
+import "./HomeScreen.css"
 import { Container } from "react-bootstrap";
 import AuthSection from "../../components/AuthSection/AuthSection";
 import DateTimeSection from "../../components/DateTimeSection/DateTimeSection";

@@ -16,6 +16,7 @@
   flex-direction: column;
   justify-content: center;
   text-align: center;
+  border: solid #5465FF 1px;
 }
 
 .datetime-container p {

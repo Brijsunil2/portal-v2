@@ -1,6 +1,29 @@
-.homepage-container {
+.homescreen-container {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   grid-template-rows:repeat(3, 1fr);
   gap: 16px;
+  max-width: 60em;
+  min-width: 20em;
+  width: 80%;
+  margin-bottom: 10em;
+}
+
+.authsection-container {
+  grid-row: 1 / 4;
+}
+
+.datetime-container {
+  grid-row: 1 / 2;
+}
+
+.weather-container {
+  grid-row: 2 / 4;
+}
+
+@media (max-width: 992px) {
+  .homescreen-container {
+    display: flex;
+    flex-direction: column;
+  }
 }

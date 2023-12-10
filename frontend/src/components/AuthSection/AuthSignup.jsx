@@ -93,6 +93,17 @@ const AuthSignup = () => {
             </Form.Control.Feedback>
           </Form.Group>
         </Row>
+        <Row className="mb-3">
+          <Form.Group as={Col}>
+            <Form.Control
+              id="signupRePassInput"
+              type="password"
+              placeholder="Retype Password"
+              pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"
+              required
+            />
+          </Form.Group>
+        </Row>
         <Button type="submit">Sign-up</Button>
       </Form>
     </Container>
