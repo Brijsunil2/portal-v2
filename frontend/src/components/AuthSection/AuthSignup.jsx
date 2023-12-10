@@ -13,8 +13,6 @@ const AuthSignup = () => {
     }
 
     setValidated(true);
-    console.log(e.target.signupFirstnameInput.value);
-    console.log(e.target.signupLastnameInput.value);
     console.log(e.target.signupUsernameInput.value);
     console.log(e.target.signupEmailInput.value);
     console.log(e.target.signupPassInput.value);
@@ -28,25 +26,13 @@ const AuthSignup = () => {
         <Row className="mb-3">
           <Form.Group as={Col}>
             <Form.Control
-              id="signupFirstnameInput"
+              id="signupNameInput"
               type="text"
-              placeholder="Firstname"
+              placeholder="Name"
               required
             />
             <Form.Control.Feedback type="invalid">
-              Please provide a firstname.
-            </Form.Control.Feedback>
-          </Form.Group>
-
-          <Form.Group as={Col}>
-            <Form.Control
-              id="signupLastnameInput"
-              type="text"
-              placeholder="Lastname"
-              required
-            />
-            <Form.Control.Feedback type="invalid">
-              Please provide a lastname.
+              Please provide your fullname.
             </Form.Control.Feedback>
           </Form.Group>
         </Row>
