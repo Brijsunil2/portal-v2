@@ -1,6 +1,16 @@
 import { useState } from "react";
 import { Container, Button, Col, Form, Row } from "react-bootstrap";
 
+const errMessages = [
+  "Please provide your name.",
+  "Username must be a minimum of 5 characters long.",
+  "Username already exists.",
+  "Please provide a valid email",
+  "Password must have at least one lowercase, one uppercase, a number and at least 8 characters long.",
+  "Retype password",
+  "Passwords do not match"
+]
+
 const AuthSignup = () => {
   const [validated, setValidated] = useState(false);
 
@@ -32,7 +42,7 @@ const AuthSignup = () => {
               required
             />
             <Form.Control.Feedback type="invalid">
-              Please provide your fullname.
+              { errMessages[0] }
             </Form.Control.Feedback>
           </Form.Group>
         </Row>
@@ -47,7 +57,7 @@ const AuthSignup = () => {
               required
             />
             <Form.Control.Feedback type="invalid">
-              Username must be a minimum of 5 characters long.
+              { errMessages[1] }
             </Form.Control.Feedback>
           </Form.Group>
         </Row>
@@ -60,7 +70,7 @@ const AuthSignup = () => {
               required
             />
             <Form.Control.Feedback type="invalid">
-              Please provide a valid email.
+              { errMessages[3] }
             </Form.Control.Feedback>
           </Form.Group>
         </Row>
@@ -74,8 +84,7 @@ const AuthSignup = () => {
               required
             />
             <Form.Control.Feedback type="invalid">
-              Password must have at least one lowercase, one uppercase, a number
-              and at least 8 characters long.
+              { errMessages[4] }
             </Form.Control.Feedback>
           </Form.Group>
         </Row>
@@ -85,10 +94,12 @@ const AuthSignup = () => {
               id="signupRePassInput"
               type="password"
               placeholder="Retype Password"
-              pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"
               required
             />
           </Form.Group>
+          <Form.Control.Feedback type="invalid">
+              { errMessages[5] }
+            </Form.Control.Feedback>
         </Row>
         <Button type="submit">Sign-up</Button>
       </Form>
