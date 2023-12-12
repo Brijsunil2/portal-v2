@@ -1,5 +1,5 @@
-import { useState, useEffect } from "react";
-import { useSelector, useDispatch } from "react-redux";
+import { useState } from "react";
+import { useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import { Container, Button, Col, Form, Row, Spinner } from "react-bootstrap";
 import { useRegisterMutation } from "../../slices/usersApiSlice";
@@ -8,7 +8,6 @@ import * as formik from "formik";
 import * as yup from "yup";
 
 const AuthSignup = () => {
-  const { userInfo } = useSelector((state) => state.auth);
   const [validUsername, setValidUsername] = useState(true);
   const [vaildEmail, setValidEmail] = useState(true);
 
@@ -26,12 +25,6 @@ const AuthSignup = () => {
   const dispatch = useDispatch();
 
   const [register, { isLoading }] = useRegisterMutation();
-
-  useEffect(() => {
-    if (userInfo) {
-      navagate("/home");
-    }
-  }, [userInfo, navagate]);
 
   const submitHandler = async (values) => {
     setValidUsername(true);
