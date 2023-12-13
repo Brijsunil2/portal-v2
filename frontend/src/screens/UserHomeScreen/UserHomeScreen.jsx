@@ -11,7 +11,7 @@ const UserHomeScreen = () => {
       <DateTimeSection />
       <WeatherSection />
     </Container>
-  )
-}
+  );
+};
 
-export default UserHomeScreen
+export default UserHomeScreen;
