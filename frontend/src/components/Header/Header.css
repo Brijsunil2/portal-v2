@@ -1,0 +1,46 @@
+header .navbar-nav {
+  background-color: #E2FDFF;
+  padding: 0 1em;
+  border: solid 1px #5465FF;
+}
+
+header .dropdown-menu.show {
+  margin-bottom: 1em;
+  min-width: 250px;
+}
+
+header h2, header h3 {
+  color: black;
+  padding-left: 10px;
+}
+
+header h2 {
+  padding-bottom: 0.3em;
+}
+
+header h3 {
+  font-size: 0.7em;
+}
+
+header p {
+  color:gray;
+  margin: 0;
+  font-size: 0.7em;
+}
+
+header .dropdown-menu[data-bs-popper] {
+  left: -150px;
+  border: solid 1px #5465FF;
+}
+
+header .dropdown-menu {
+  border-radius: 0;
+}
+
+header .navbar-nav:active {
+  background-color: #5465FF;
+}
+
+header .navbar-nav.show.dropdown {
+  background-color: #5465FF;
+}
