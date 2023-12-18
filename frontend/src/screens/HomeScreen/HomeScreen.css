@@ -8,18 +8,6 @@
   margin-bottom: 10em;
 }
 
-.authsection-container {
-  grid-row: 1 / 4;
-}
-
-.datetime-container {
-  grid-row: 1 / 2;
-}
-
-.weather-container {
-  grid-row: 2 / 4;
-}
-
 @media (max-width: 992px) {
   .homescreen-container {
     display: flex;

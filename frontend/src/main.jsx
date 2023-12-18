@@ -14,6 +14,7 @@ import App from "./App.jsx";
 import PrivateRoute from "./components/PrivateRoute.jsx";
 import HomeScreen from "./screens/HomeScreen/HomeScreen.jsx";
 import UserHomeScreen from "./screens/UserHomeScreen/UserHomeScreen.jsx";
+import SettingScreen from "./screens/SettingScreen/SettingScreen.jsx";
 
 const router = createBrowserRouter(
   createRoutesFromElements(
@@ -21,6 +22,7 @@ const router = createBrowserRouter(
       <Route index={true} path="/" element={<HomeScreen />} />
       <Route path="" element={<PrivateRoute />}>
         <Route path="/home" element={<UserHomeScreen />} />
+        <Route path="/settings" element={<SettingScreen />} />
       </Route>
     </Route>
   )

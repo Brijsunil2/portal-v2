@@ -1,12 +1,15 @@
 header .navbar-nav {
-  background-color: #E2FDFF;
   padding: 0 1em;
-  border: solid 1px #5465FF;
 }
 
 header .dropdown-menu.show {
   margin-bottom: 1em;
   min-width: 250px;
+}
+
+header p {
+  font-family: 'Roboto Flex', sans-serif;
+  font-weight: bold;
 }
 
 header h2, header h3 {
@@ -22,12 +25,6 @@ header h3 {
   font-size: 0.7em;
 }
 
-header p {
-  color:gray;
-  margin: 0;
-  font-size: 0.7em;
-}
-
 header .dropdown-menu[data-bs-popper] {
   left: -150px;
   border: solid 1px #5465FF;
@@ -37,10 +34,28 @@ header .dropdown-menu {
   border-radius: 0;
 }
 
-header .navbar-nav:active {
-  background-color: #5465FF;
+header .navbar-nav {
+  padding: 0;
 }
 
-header .navbar-nav.show.dropdown {
-  background-color: #5465FF;
+header .dropdown svg {
+  color: black;
+}
+
+header .dropdown a {
+  background-color: #3e50f1;
+}
+
+header .dropdown {
+  padding: 0.1em;
+}
+
+header .dropdown-toggle::after {
+  display: none; 
+}
+
+@media (max-width: 770px) {
+  header .datetime-container {
+    display: none;
+  }
 }
