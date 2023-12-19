@@ -1,18 +1,19 @@
 /* font-family: 'Roboto', sans-serif;
 font-family: 'Roboto Condensed', sans-serif;
-font-family: 'Roboto Flex', sans-serif; */
+font-family: 'Roboto Flex', sans-serif; 
+#11009E
+#4942E4
+#8696FE
+#C4B0FF
+*/
 
 body {
   font-family: 'Roboto', sans-serif;
-}
-
-div {
-  transition: all .3s linear;
+  background-color: #f8faff;
 }
 
 header {
-  background-color: #5465FF;
-  margin-bottom: 3rem;
+  background-color: #002db3;
 }
 
 h1 {
@@ -35,10 +36,10 @@ h3 {
 }
 
 .btn {
-  border-radius: 0;
+  border-radius: 20px;
   min-width: 5em;
-  background-color: #E2FDFF;
-  color: black;
+  background-color: #0000ff;
+  color: white;
 }
 
 .navbar-toggler {

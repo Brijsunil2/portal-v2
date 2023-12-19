@@ -1,16 +1,16 @@
-.homescreen-container {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  grid-template-rows:repeat(3, 1fr);
-  gap: 16px;
-  max-width: 60em;
-  width: 80%;
-  margin-bottom: 10em;
+.homescreen-container .primary-container {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  padding: 2em 0 10em 0;
+  margin: 0;
+  background-image: linear-gradient(180deg, #bfcfff, #f8faff);
+  align-items: center;
 }
 
-@media (max-width: 992px) {
-  .homescreen-container {
-    display: flex;
-    flex-direction: column;
-  }
+.authsection-container {
+  min-width: 20em;
+  max-width: 30em;
+  background-color:#f8faff;
+  border-radius: 0.5em;
 }

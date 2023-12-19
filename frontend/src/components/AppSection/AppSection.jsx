@@ -6,17 +6,15 @@ import AppEntry from "./AppEntry";
 
 const AppSection = () => {
   return (
-    <Container className="appsection-container">
-      <h2>Applications</h2>
-      <Row>
-        <Col>
+    <div className="appsection-container">
+      <Container>
+        <h2>Applications</h2>
+        <Container className="appentries-container">
           <AppEntry appName="Forums" appIcon={<MdForum />} />
-        </Col>
-        <Col>
           <AppEntry appName="Calendar" appIcon={<BsCalendarEvent />} />
-        </Col>
-      </Row>
-    </Container>
+        </Container>
+      </Container>
+    </div>
   );
 };
 

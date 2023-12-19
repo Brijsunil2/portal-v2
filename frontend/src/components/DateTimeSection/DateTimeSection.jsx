@@ -12,7 +12,7 @@ const DateTimeSection = () => {
   }, []);
 
   return (
-    <Container className="datetime-container">
+    <div className="datetime-container">
       <p className="date-text">
         {date.toLocaleDateString("en-US", {
           weekday: "long",
@@ -27,7 +27,7 @@ const DateTimeSection = () => {
           minute: "numeric",
         })}
       </p>
-    </Container>
+    </div>
   );
 };
 

@@ -1,5 +1,5 @@
 import "./Header.css";
-import { Container, Navbar, Nav, NavDropdown } from "react-bootstrap";
+import { Container, Navbar, Nav, NavDropdown, Col, Row } from "react-bootstrap";
 import { useNavigate } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
 import { logout } from "../../slices/authSlice";
@@ -28,25 +28,39 @@ const Header = () => {
 
   return (
     <header>
-      <Navbar collapseOnSelect expand="md">
-        <Container>
-          <Navbar.Brand href="/">
-            <h1>Portal</h1>
-          </Navbar.Brand>
-          <DateTimeSection />
-          <Navbar.Toggle aria-controls="responsive-navbar-nav" />
-          <Navbar.Collapse id="responsive-navbar-nav">
-            <Nav className="me-auto"></Nav>
-            <Nav>
-              {userInfo && (
-                <NavDropdown title={<TiWeatherPartlySunny size={25} />}>
+      <Navbar>
+          <Col>
+            <Navbar.Brand className="d-flex align-items-center" href="/">
+              <h1>Portal</h1>
+            </Navbar.Brand>
+          </Col>
+          <Col>
+            <DateTimeSection />
+          </Col>
+          <Col className="d-flex justify-content-end">
+          {userInfo && (
+            <>
+              <Nav>
+                <NavDropdown
+                  title={
+                    <>
+                      <TiWeatherPartlySunny size={25} />
+                      <p className="nav-btn-label">Weather</p>
+                    </>
+                  }
+                >
                   <WeatherSection />
                 </NavDropdown>
-              )}
-            </Nav>
-            <Nav>
-              {userInfo && (
-                <NavDropdown title={<MdPerson size={25} />}>
+              </Nav>
+              <Nav>
+                <NavDropdown
+                  title={
+                    <>
+                      <MdPerson size={25} />
+                      <p className="nav-btn-label">Account</p>
+                    </>
+                  }
+                >
                   <Container className="mx-1">
                     <p>Logged in as:</p>
                     <h2>{userInfo.username}</h2>
@@ -61,10 +75,10 @@ const Header = () => {
                     Logout
                   </NavDropdown.Item>
                 </NavDropdown>
-              )}
-            </Nav>
-          </Navbar.Collapse>
-        </Container>
+              </Nav>
+            </>
+          )}
+          </Col>
       </Navbar>
     </header>
   );

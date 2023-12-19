@@ -16,7 +16,7 @@ const AuthSection = ({ setUser }) => {
   };
 
   return (
-    <Container className="authsection-container">
+    <div className="authsection-container">
       <ButtonGroup>
         <ToggleButton
           type="radio"
@@ -34,7 +34,7 @@ const AuthSection = ({ setUser }) => {
         </ToggleButton>
       </ButtonGroup>
       <Container>{isLogin ? <AuthLogin /> : <AuthSignup />}</Container>
-    </Container>
+    </div>
   );
 };
 

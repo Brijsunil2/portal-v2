@@ -1,12 +1,15 @@
 import "./UserHomeScreen.css";
-import { Container } from "react-bootstrap";
 import AppSection from "../../components/AppSection/AppSection";
+import DivSeparator from "../../components/DivSeparator/DivSeparator";
 
 const UserHomeScreen = () => {
   return (
-    <Container className="userhomescreen-container">
-      <AppSection />
-    </Container>
+    <div className="userhomescreen-container">
+      <div className="primary-container">
+       <AppSection />
+      </div>
+      <DivSeparator color="#f8faff" />
+    </div>
   );
 };
 
