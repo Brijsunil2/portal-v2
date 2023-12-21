@@ -15,16 +15,20 @@ import PrivateRoute from "./components/PrivateRoute.jsx";
 import HomeScreen from "./screens/HomeScreen/HomeScreen.jsx";
 import UserHomeScreen from "./screens/UserHomeScreen/UserHomeScreen.jsx";
 import SettingScreen from "./screens/SettingScreen/SettingScreen.jsx";
+import NotFoundScreen from "./screens/NotFoundScreen/NotFoundScreen.jsx";
 
 const router = createBrowserRouter(
   createRoutesFromElements(
-    <Route path="/" element={<App />}>
-      <Route index={true} path="/" element={<HomeScreen />} />
-      <Route path="" element={<PrivateRoute />}>
-        <Route path="/home" element={<UserHomeScreen />} />
-        <Route path="/settings" element={<SettingScreen />} />
+    <>
+      <Route path="/" element={<App />}>
+        <Route index={true} path="/" element={<HomeScreen />} />
+        <Route path="" element={<PrivateRoute />}>
+          <Route path="/home" element={<UserHomeScreen />} />
+          <Route path="/settings" element={<SettingScreen />} />
+        </Route>
+        <Route path="*" element={<NotFoundScreen />} />
       </Route>
-    </Route>
+    </>
   )
 );
 

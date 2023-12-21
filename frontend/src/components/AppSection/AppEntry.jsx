@@ -1,5 +1,4 @@
 import { useNavigate } from "react-router-dom";
-import { motion } from "framer-motion";
 import { Card, Button } from "react-bootstrap";
 import { IoMdArrowForward } from "react-icons/io";
 
