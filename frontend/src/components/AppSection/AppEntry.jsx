@@ -1,22 +1,25 @@
 import { useNavigate } from "react-router-dom";
 import { motion } from "framer-motion";
+import { Card, Button } from "react-bootstrap";
+import { IoMdArrowForward } from "react-icons/io";
 
-const AppEntry = ({ appName, appIcon }) => {
+const AppEntry = ({ appName, appIcon, appDesc }) => {
   const navigate = useNavigate();
   const routeChange = () => {
     navigate("/" + appName.toLowerCase());
   };
 
   return (
-    <motion.div
-      className="appentry-container"
-      onClick={routeChange}
-      whileHover={{ scale: 1.1 }}
-      whileTap={{ scale: 0.9 }}
-    >
-      {appIcon}
-      <h3>{appName}</h3>
-    </motion.div>
+    <Card className="appentry-container">
+      <Card.Header>{appIcon}</Card.Header>
+      <Card.Body>
+        <Card.Title>{appName}</Card.Title>
+        <Card.Text>
+          {appDesc}
+        </Card.Text>
+        <Button><IoMdArrowForward /></Button>
+      </Card.Body>
+    </Card>
   );
 };
 

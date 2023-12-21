@@ -4,15 +4,14 @@
   padding: 1em 2em;
 }
 
+/* #E2FDFF */
 .appentry-container {
   text-align: center;
-  background-color: #E2FDFF;
+  background-color: #f8faff;
   padding: 0.5em;
   margin: 0.5em;
   border: solid 1px #5465FF;
-  cursor: pointer;
-  min-width: 10em;
-  max-width: 20em;
+  height: 100%;
 }
 
 .appentries-container {
@@ -27,8 +26,4 @@
 
 .appentry-container h3 {
   color: black;
-}
-
-.appsection-container .col {
-  padding: 0;
 }
