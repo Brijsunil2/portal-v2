@@ -1,6 +1,5 @@
 import "./UserHomeScreen.css";
 import AppSection from "../../components/AppSection/AppSection";
-import DivSeparator from "../../components/DivSeparator/DivSeparator";
 
 const UserHomeScreen = () => {
   return (
@@ -8,7 +7,6 @@ const UserHomeScreen = () => {
       <div className="primary-container">
        <AppSection />
       </div>
-      <DivSeparator color="#f8faff" />
     </div>
   );
 };

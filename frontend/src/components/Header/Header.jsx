@@ -63,8 +63,8 @@ const Header = () => {
                 >
                   <Container className="mx-1">
                     <p>Logged in as:</p>
-                    <h2>{userInfo.username}</h2>
-                    <h3>{userInfo.name}</h3>
+                    <h3>{userInfo.username}</h3>
+                    <h4>{userInfo.name}</h4>
                   </Container>
                   <NavDropdown.Divider />
                   <NavDropdown.Item onClick={() => navagate("/settings")}>

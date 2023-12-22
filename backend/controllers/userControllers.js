@@ -25,14 +25,13 @@ const authUser = asyncHandler(async (req, res) => {
 });
 
 const registerUser = asyncHandler(async (req, res) => {
-  const { name , username, email, password } = req.body;
+  const { name, username, email, password } = req.body;
   const userExists = await User.findOne({ email });
 
   if (userExists) {
     res.status(400);
     throw new Error("Email already exists");
-  } 
-  else {
+  } else {
     const userNameExists = await User.findOne({ username });
 
     if (userNameExists) {
@@ -77,4 +76,38 @@ const getUser = asyncHandler(async (req, res) => {
   res.status(200).json(user);
 });
 
-export { authUser, registerUser, logoutUser, getUser };
+const updateUser = asyncHandler(async (req, res) => {
+  const user = await User.findById(req.user._id);
+
+  if (user) {
+    // Check if username and email exists 
+    
+    // const userNameExists = await User.find({ username });
+
+    // if (userNameExists) {
+    //   res.status(400);
+    //   throw new Error("Username already exists");
+    // }
+    
+    user.name = req.body.name || user.name;
+    user.username = req.body.username || user.username;
+    user.email = req.body.email || user.email;
+
+    if (req.body.password) {
+      user.password = req.body.password;
+    }
+
+    const updatedUser = await user.save();
+    res.status(200).json({
+      _id: updatedUser._id,
+      name: updatedUser.name,
+      username: updatedUser.username,
+      email: updatedUser.email,
+    });
+  } else {
+    res.status(404);
+    throw new Error("User not found");
+  }
+});
+
+export { authUser, registerUser, logoutUser, getUser, updateUser };

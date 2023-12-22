@@ -3,7 +3,6 @@ import { useEffect } from "react";
 import { useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import AuthSection from "../../components/AuthSection/AuthSection";
-import DivSeparator from "../../components/DivSeparator/DivSeparator";
 
 const HomeScreen = () => {
   const { userInfo } = useSelector((state) => state.auth);
@@ -20,7 +19,6 @@ const HomeScreen = () => {
       <div className="primary-container">
         <AuthSection />
       </div>
-      <DivSeparator color="#f8faff" />
     </div>
   );
 };

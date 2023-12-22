@@ -11,11 +11,15 @@ header h1 {
   color: white;
 }
 
+header {
+  box-shadow: 0 4px 2px -2px gray;
+}
+
 header h2 {
   padding-bottom: 0.3em;
 }
 
-header h3 {
+header h4 {
   font-size: 0.7em;
 }
 

@@ -1,15 +1,17 @@
-.userhomescreen-container .primary-container {
+.userhomescreen-container {
   display: flex;
   justify-content: center;
   width: 100%;
+}
+
+.userhomescreen-container .primary-container {
   padding: 2em 0 10em 0;
   margin: 0;
-  background-image: linear-gradient(180deg, #bfcfff, #f8faff);
   align-items: center;
+  min-width: 20em;
+  max-width: 60em;
 }
 
 .appsection-container {
-  min-width: 20em;
-  max-width: 60em;
   border-radius: 0.5em;
 }
