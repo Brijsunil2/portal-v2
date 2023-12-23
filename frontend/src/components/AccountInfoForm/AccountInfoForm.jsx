@@ -1,7 +1,15 @@
 import "./AccountInfoForm.css";
 import { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { Container, Button, Col, Form, Row, Spinner } from "react-bootstrap";
+import {
+  Container,
+  Button,
+  Col,
+  Form,
+  Row,
+  Spinner,
+  Modal,
+} from "react-bootstrap";
 import { useUpdateUserMutation } from "../../slices/usersApiSlice";
 import { setCredentials } from "../../slices/authSlice";
 import * as formik from "formik";
@@ -10,6 +18,7 @@ import * as yup from "yup";
 const AccountInfoForm = () => {
   const [validUsername, setValidUsername] = useState(true);
   const [vaildEmail, setValidEmail] = useState(true);
+  const [successModal, setSuccessModal] = useState(false);
 
   const { Formik } = formik;
 
@@ -34,6 +43,7 @@ const AccountInfoForm = () => {
     try {
       const res = await update(values).unwrap();
       dispatch(setCredentials({ ...res }));
+      setSuccessModal(true);
     } catch (err) {
       if (err.status === 400) {
         switch (err.data.message) {
@@ -161,6 +171,16 @@ const AccountInfoForm = () => {
                 </Form.Control.Feedback>
               </Form.Group>
             </Row>
+            <Modal
+              size="sm"
+              show={successModal}
+              onHide={() => setSuccessModal(false)}
+              aria-labelledby="success-modal"
+              centered
+            >
+              <Modal.Header closeButton>Success!</Modal.Header>
+              <Modal.Body style={{ color: "green" }}>Account Information Updated</Modal.Body>
+            </Modal>
             <Button type="submit">
               {isLoading ? (
                 <Spinner animation="border" role="status">
