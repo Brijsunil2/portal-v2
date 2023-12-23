@@ -80,14 +80,24 @@ const updateUser = asyncHandler(async (req, res) => {
   const user = await User.findById(req.user._id);
 
   if (user) {
-    // Check if username and email exists 
-    
-    // const userNameExists = await User.find({ username });
+    if (req.body.username && req.body.username !== user.username) {
+      const userNameExists = await User.findOne({ username: req.body.username });
 
-    // if (userNameExists) {
-    //   res.status(400);
-    //   throw new Error("Username already exists");
-    // }
+      if (userNameExists) {
+        res.status(400);
+        throw new Error("Username already exists");
+      }
+    }
+
+    if (req.body.email && req.body.email !== user.email) {
+      const emailExists = await User.findOne({ email: req.body.email });
+
+      if (emailExists) {
+        res.status(400);
+        throw new Error("Email already exists");
+      }
+    }
+
     
     user.name = req.body.name || user.name;
     user.username = req.body.username || user.username;

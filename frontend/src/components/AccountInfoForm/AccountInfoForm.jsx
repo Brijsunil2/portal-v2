@@ -1,4 +1,5 @@
-import { useState, useEffect } from "react";
+import "./AccountInfoForm.css";
+import { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { Container, Button, Col, Form, Row, Spinner } from "react-bootstrap";
 import { useUpdateUserMutation } from "../../slices/usersApiSlice";
@@ -33,7 +34,6 @@ const AccountInfoForm = () => {
     try {
       const res = await update(values).unwrap();
       dispatch(setCredentials({ ...res }));
-      console.log(res)
     } catch (err) {
       if (err.status === 400) {
         switch (err.data.message) {
