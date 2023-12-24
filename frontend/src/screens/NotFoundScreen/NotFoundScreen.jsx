@@ -5,11 +5,11 @@ import { IoMdArrowForward } from "react-icons/io";
 
 const NotFoundScreen = () => {
   return (
-    <Container className="m-5 text-center">
+    <Container className="my-5 text-center">
       <h1>
         <GrDocumentMissing /> 404 Page Not Found
       </h1>
-      <Link className="m-5" to={"/"}>
+      <Link to={"/"}>
         <IoMdArrowForward /> Navagate to Homepage?
       </Link>
     </Container>
