@@ -1,4 +1,4 @@
-import React from "react";
+import React, {lazy} from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./main.css";
 import ReactDOM from "react-dom/client";
@@ -12,10 +12,12 @@ import {
 } from "react-router-dom";
 import App from "./App.jsx";
 import PrivateRoute from "./components/PrivateRoute.jsx";
-import HomeScreen from "./screens/HomeScreen/HomeScreen.jsx";
-import UserHomeScreen from "./screens/UserHomeScreen/UserHomeScreen.jsx";
-import SettingScreen from "./screens/SettingScreen/SettingScreen.jsx";
-import NotFoundScreen from "./screens/NotFoundScreen/NotFoundScreen.jsx";
+
+const HomeScreen = lazy(() => import("./screens/HomeScreen/HomeScreen.jsx"));
+const UserHomeScreen = lazy(() => import("./screens/UserHomeScreen/UserHomeScreen.jsx"));
+const SettingScreen = lazy(() => import("./screens/SettingScreen/SettingScreen.jsx"));
+const NotFoundScreen = lazy(() => import("./screens/NotFoundScreen/NotFoundScreen.jsx"));
+
 
 const router = createBrowserRouter(
   createRoutesFromElements(
