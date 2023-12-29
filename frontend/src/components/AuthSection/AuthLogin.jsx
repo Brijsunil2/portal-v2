@@ -52,11 +52,8 @@ const AuthLogin = () => {
         validationSchema={formSchema}
         onSubmit={(values) => submitHandler(values)}
         initialValues={{
-          name: "",
-          username: "",
           email: "",
           password: "",
-          confirmPassword: "",
         }}
       >
         {({ handleSubmit, handleChange, values, touched, errors }) => (
