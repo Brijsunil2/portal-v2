@@ -1,7 +1,7 @@
 {
-  "name": "portal-release",
+  "name": "portal-v2",
   "version": "1.0.0",
-  "description": "An application that allows users to login to gain access to a dashboard of apps.",
+  "description": "This is a newer version of the portal app. Since the old portal app also includes the forums, I thought this was bad designs. The purpose of this app is to divide the login and homepage section and have separate repository apps hosted on this site.",
   "main": "index.js",
   "type": "module",
   "scripts": {
@@ -12,14 +12,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Brijsunil2/portal-release.git"
+    "url": "git+https://github.com/Brijsunil2/portal-v2.git"
   },
   "author": "Sunil Brijlall",
-  "license": "Apache-2.0",
+  "license": "ISC",
   "bugs": {
-    "url": "https://github.com/Brijsunil2/portal-release/issues"
+    "url": "https://github.com/Brijsunil2/portal-v2/issues"
   },
-  "homepage": "https://github.com/Brijsunil2/portal-release#readme",
+  "homepage": "https://github.com/Brijsunil2/portal-v2#readme",
   "dependencies": {
     "bcryptjs": "^2.4.3",
     "cookie-parser": "^1.4.6",
